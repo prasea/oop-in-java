@@ -23,7 +23,8 @@ Unit 8 I/O and Streams 2 Hrs.
 java.io package, Files and directories, Streams: Byte Streams and Character Streams; Reading/Writing Console Input/Output, Reading and Writing files, The Serialization Interface, Serialization & Deserialization.
 
 Unit 9 Understanding Core Packages 3 Hrs.
-Using java.lang Package: java.lang.Math, Wrapper classes and associated methods (Number, Double, Float, Integer, Byte; Short, Long; Character, Boolean); Using java.util package: Core classes (Vector, Stack, Dictionary, Hashtable, Enumerations, Random Number Generation).
+Using java.lang Package: java.lang.Math, Wrapper classes and associated methods (Number, Double, Float, Integer, Byte; Short, Long; Character, Boolean); 
+Using java.util package: Core classes (Vector, Stack, Dictionary, Hashtable, Enumerations, Random Number Generation).
 
 Unit 10 Holding Collection of Data 3 Hrs.
 Arrays And Collection Classes/Interfaces, Map/List/Set Implementations: Map Interface, List Interface, Set Interface. Collection Classes: Array List, Linked List, Hash Set and Tree Set; Accessing Collections/Use of An Iterator, Comparator.
@@ -38,3 +39,17 @@ Definition, Applet lifecycle methods, Build a simple applet, Using Applet Viewer
 
 Unit 13 Database Programming using JDBC 2 Hrs.
 Using Connection, Statement & Result Set Interfaces for Manipulating Data with the Databases
+
+
+Lab Report
+
+
+**Program 1:** Write a program to print Hello World! 
+**Program 2:** Write a program to print first n prime numbers 
+**Program 3:** Write a program to find maximum number between three number 
+**Program 4:** Write a program to print Series 1, 3, 5, 7, 9 upto n term 
+**Program 5:** Write a program to print sum of series: 1, 6, 9, 13, 17 upto n term 
+**Program 6:** Write a program to print series: 0, 1, 1, 2, 3, 5, 8, 13 upto n term 
+**Program 7:** Write a program to print the factorial number 
+**Program 8:** Write a program to arrange number in Ascending order 
+**Program 9:** Write a program to display area & volume of sphere
