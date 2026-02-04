@@ -1,0 +1,449 @@
+# Unit 10 Holding Collection of Data
+
+
+**Collection Framework is Data Structure in Java**
+
+  - Java provides built-in data structures called **collections**.
+  - Collections are used to **store and organize data** inside a program.
+  - Without a collection framework (or some data structure), developing real-world applications is nearly impossible.
+
+- **Data is Central**
+
+  - Programs process **data** to compute results.
+  - Most applications don’t deal with single values—they deal with **lists of values** (e.g., students, books, accounts).
+
+---
+
+## **Sources of Data for a Java Program**
+
+Java programs can get data from:
+
+1. **Keyboard input**
+2. **Files** (data already stored on disk)
+3. **Databases**
+
+   * Relational (SQL)
+   * Object-oriented
+4. **Remote computers / networks**
+
+   * Through the internet or local network
+
+**Important:** The data is often a **list** (collection), not just a single value.
+
+---
+
+#### **Examples of Data Lists**
+
+* **List of primitive values:** integers, floats, etc.
+* **List of objects:** students, books, customers, accounts, movies.
+* **Purpose of Data** Computation, search, update, reporting, billing, etc.
+
+
+```java
+Student[] students = new Student[100];  // Array of 100 students
+```
+
+---
+
+#### **Storing Data in Memory**
+
+* Once data comes from the source, it must be held in memory (typically in the **heap** for objects in Java).
+* The **organization of data** in memory is called a **data structure**.
+* **Collections** are Java’s way of arranging data efficiently in memory.
+
+---
+
+## **Arrays: Basic Data Structure**
+
+An **array** is a **fixed-size data structure** that stores elements of the **same data type** in contiguous memory locations. It is the simplest way to store a collection of values.
+
+### **Limitations of Arrays**
+
+* **Fixed Size:**
+
+  * Once an array is created, its size **cannot change**.
+  * To increase size:
+
+    1. Create a new array of larger size.
+    2. Copy existing elements into the new array.
+    3. Make the original reference point to the new array.
+    4. Optionally, discard the old array.
+
+  Example:
+
+  ```java
+  int[] A = new int[5];  // original array
+  int[] B = new int[10]; // new bigger array
+  // System.arraycopy(A, 0, B, 0, A.length);
+  for(int i=0; i< A.length; i++) {
+    B[i] = A[i];
+  }
+  A = B;  // A now points to bigger array
+  B = null;
+  ```
+
+* **Drawbacks:**
+
+  * Programmer must handle resizing manually.
+  * Cannot predict the number of elements coming at runtime.
+  * Insertion/deletion in the middle of array requires shifting elements manually.
+  * No built-in methods for insertion, deletion, or sorting
+
+---
+
+### **Why Arrays Are Not Always Suitable**
+
+* Real-world applications often need **dynamic-sized collections**.
+* Arrays are not flexible for:
+
+  * Unknown size at runtime
+  * Frequent insertion/deletion in the middle
+  * Ensuring uniqueness of elements
+  * Maintaining sorted order automatically
+---
+
+### **Collection Framework to the Rescue**
+
+Java provides **built-in classes** under the **Collections Framework** to overcome array limitations:
+
+**ArrayList**
+  * Dynamic resizing (auto-expands when more elements are added)
+
+* **LinkedList**
+  * Also allows dynamic insertion/deletion anywhere in the list
+
+* **Set**
+  * Automatically prevents duplicate elements
+
+* **SortedSet**
+  * Ensures elements are unique **and** sorted automatically
+
+---
+
+### **Common Operations on Collections**
+
+1. **Insertion**
+
+   * Collections handle insertion automatically.
+   * No need to manually shift elements like arrays.
+
+2. **Deletion**
+
+   * Collections handle deletion automatically.
+   * No need to manually shift elements.
+
+3. **Searching**
+
+   * Collections provide built-in methods.
+   * Methods can implement:
+
+     * Linear Search
+     * Binary Search
+     * Hash-based search (key-value pair via Map classes)
+   * Hashing provides **fast search** for large collections.
+
+---
+
+### **Key Takeaways**
+
+* Arrays are simple but **limited in flexibility**.
+* Collections Framework provides:
+
+  * **Dynamic sizing** (ArrayList, LinkedList)
+  * **Uniqueness** (Set)
+  * **Sorting** (SortedSet)
+  * **Efficient operations**: insert, delete, search, hash-based lookup
+* Collections let the programmer **focus on using data**, not managing it.
+
+
+
+## Java Collection Framework
+
+The **Java Collection Framework (JCF)** is a **set of classes and interfaces** that provide **dynamic data structures** for storing and manipulating groups of objects.
+
+### Advantages of Collections
+
+* Dynamic resizing
+* Built-in algorithms
+* Reduces programming effort
+* Increases performance and code reusability
+
+### Hierarchy 
+
+* **Collection (interface)**
+
+  * List
+  * Set
+* **Map (interface)** *(does not extend Collection)*
+
+---
+
+# PART I: COLLECTION INTERFACES
+
+---
+
+## 3. Collection Interface
+
+### Definition
+
+The **Collection interface** is the **root interface** of the collection hierarchy.
+
+### Important Methods
+
+* `add()`
+* `remove()`
+* `size()`
+* `clear()`
+* `contains()`
+* `iterator()`
+
+---
+
+## 4. List Interface
+
+### Definition
+
+A **List** is an **ordered collection** that allows:
+
+* Duplicate elements
+* Positional access using index
+
+### Key Features
+
+* Maintains insertion order
+* Allows multiple `null` values
+
+### Common Implementations
+
+* `ArrayList`
+* `LinkedList`
+
+---
+
+## 5. Set Interface
+
+### Definition
+
+A **Set** is a collection that **does not allow duplicate elements**.
+
+### Key Features
+
+* Unordered (except sorted sets)
+* No index-based access
+
+### Common Implementations
+
+* `HashSet`
+* `TreeSet`
+
+---
+
+## 6. Map Interface
+
+### Definition
+
+A **Map** stores data in the form of **key–value pairs**.
+
+### Key Characteristics
+
+* Keys must be unique
+* Values may be duplicated
+* Does **not** extend Collection interface
+
+### Common Methods
+
+* `put(key, value)`
+* `get(key)`
+* `remove(key)`
+* `keySet()`
+* `values()`
+
+---
+
+# PART II: COLLECTION CLASSES
+
+---
+
+## 7. ArrayList Class
+
+### Definition
+
+**ArrayList** is a **resizable array implementation** of the List interface.
+
+### Characteristics
+
+* Allows duplicate elements
+* Maintains insertion order
+* Fast random access
+* Not synchronized
+
+### Example
+
+```java
+ArrayList<String> list = new ArrayList<>();
+list.add("Java");
+list.add("Python");
+```
+
+### When to Use
+
+* When frequent read operations are required
+
+---
+
+## 8. LinkedList Class
+
+### Definition
+
+**LinkedList** is a **doubly linked list implementation** of List interface.
+
+### Characteristics
+
+* Slower access compared to ArrayList
+* Faster insertion and deletion
+* Can act as Queue or Deque
+
+### Example
+
+```java
+LinkedList<Integer> ll = new LinkedList<>();
+ll.add(10);
+ll.add(20);
+```
+
+---
+
+## 9. HashSet Class
+
+### Definition
+
+**HashSet** implements the Set interface using a **hash table**.
+
+### Characteristics
+
+* Does not allow duplicates
+* Does not maintain insertion order
+* Allows one `null` element
+* Fast performance
+
+### Example
+
+```java
+HashSet<String> set = new HashSet<>();
+set.add("Java");
+set.add("Java"); // ignored
+```
+
+---
+
+## 10. TreeSet Class
+
+### Definition
+
+**TreeSet** is a **sorted set** implementation based on a **Red-Black Tree**.
+
+### Characteristics
+
+* Elements stored in sorted order
+* Does not allow `null`
+* Slower than HashSet
+
+### Example
+
+```java
+TreeSet<Integer> ts = new TreeSet<>();
+ts.add(30);
+ts.add(10);
+```
+
+---
+
+# PART III: ACCESSING COLLECTIONS
+
+---
+
+## 11. Iterator Interface
+
+### Definition
+
+An **Iterator** is used to **traverse elements** of a collection one by one.
+
+### Important Methods
+
+* `hasNext()`
+* `next()`
+* `remove()`
+
+### Example
+
+```java
+Iterator<String> it = list.iterator();
+while(it.hasNext()) {
+  System.out.println(it.next());
+}
+```
+
+### Advantages
+
+* Works for all collections
+* Safer than loops
+* Avoids `ConcurrentModificationException`
+
+---
+
+## 12. Comparator Interface
+
+### Definition
+
+A **Comparator** is used to define **custom sorting logic**.
+
+### Difference Between Comparable and Comparator
+
+| Comparable       | Comparator       |
+| ---------------- | ---------------- |
+| `compareTo()`    | `compare()`      |
+| Natural ordering | Custom ordering  |
+| Single sorting   | Multiple sorting |
+
+### Example
+
+```java
+Collections.sort(list, new Comparator<String>() {
+  public int compare(String a, String b) {
+    return b.compareTo(a);
+  }
+});
+```
+
+---
+
+## 13. Comparison of Collection Classes (Exam Important)
+
+| Feature      | ArrayList | LinkedList | HashSet | TreeSet |
+| ------------ | --------- | ---------- | ------- | ------- |
+| Duplicate    | Yes       | Yes        | No      | No      |
+| Order        | Yes       | Yes        | No      | Sorted  |
+| Access Speed | Fast      | Slow       | Fast    | Slow    |
+| Null Allowed | Yes       | Yes        | One     | No      |
+
+---
+
+## 14. Arrays vs Collections
+
+| Arrays             | Collections  |
+| ------------------ | ------------ |
+| Fixed size         | Dynamic size |
+| Primitive & Object | Object only  |
+| Faster             | Flexible     |
+
+---
+
+## 15. Examination Tips (TU – BCA)
+
+* Clearly define **List, Set, Map**
+* Differentiate **ArrayList vs LinkedList**
+* Write examples for **Iterator and Comparator**
+* Mention internal structure (hash table, tree)
+* Use keywords: *dynamic*, *ordered*, *unique*, *sorted*
+
+---
