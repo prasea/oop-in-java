@@ -27,7 +27,9 @@ Using java.lang Package: java.lang.Math, Wrapper classes and associated methods 
 Using java.util package: Core classes (Vector, Stack, Dictionary, Hashtable, Enumerations, Random Number Generation).
 
 Unit 10 Holding Collection of Data 3 Hrs.
-Arrays And Collection Classes/Interfaces, Map/List/Set Implementations: Map Interface, List Interface, Set Interface. Collection Classes: Array List, Linked List, Hash Set and Tree Set; Accessing Collections/Use of An Iterator, Comparator.
+Arrays And Collection Classes/Interfaces, Map/List/Set Implementations: Map Interface, List Interface, Set Interface. 
+Collection Classes: Array List, Linked List, Hash Set and Tree Set; 
+Accessing Collections/Use of An Iterator, Comparator.
 
 Unit 11 Java Applications 8 Hrs.
 About AWT & Swing, About JFrame (a top level window in Swing), Swing components (JLabel, About text component like JTextField, JButton, Event Handling in Swing Applications, Layout Management using Flow Layout, Border Layout, Grid Layout, Using JPanel, Choice components like JCheck Box, JRadio
